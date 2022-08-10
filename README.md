@@ -1,17 +1,16 @@
-# In a population of children aged between 1 month and 17 years old infected with COVID-19 since July 2020, what are the population characteristics (based on demographics, risk factors, comorbidities, region, social factors, vaccination status and healthcare utilization) and how do these differ by pandemic wave, or dominant strain based on calendar time? 
+# Hospital admissions linked to SARS-CoV-2 infection in children: a cohort study of 3.2 million first ascertained infections in England 
 
 ## Project description
 
-Description will be added here.
+To describe childhood hospitalisations related to SARS-CoV-2, in terms of admissions caused or contributed to by SARS-CoV-2 infection, versus admissions that were incidental to infection; and to explore the role of demographics, underlying health conditions, and variant eras in these admissions.
 
 ## How to cite this work
 > Citation details to follow
 
 ## Code
 
-Click [here](https://github.com/BHFDSC/CCU029_01/tree/main/code) to view the analysis code.
-
-Phenotyping algorithms and codelists are available [here](https://github.com/BHFDSC/CCU029_01/tree/main/phenotypes)
+* [View the analysis code used in NHS Digital's TRE for England](https://github.com/BHFDSC/CCU029_01/tree/main/code)
+* [View the phenotyping algorithms and codelists used in NHS Digital's TRE for England](https://github.com/BHFDSC/CCU029_01/tree/main/phenotypes)
 
 ## Project approval
 
