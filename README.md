@@ -1,5 +1,8 @@
 # Hospital admissions linked to SARS-CoV-2 infection in children: a cohort study of 3.2 million first ascertained infections in England 
 
+**Harrison  Wilde, Christopher Tomlinson, Bilal A Mateen, David Selby, Hari Krishnan Kanthimathinathan, Padmanabhan Ramnarayan, Pascale Du Pre, Mae Johnson, Nazima Pathan, Arturo Gonzalez-Izquierdo, Alvina G Lai, Deepti Gurdasani, Christina Pagel, Spiros Denaxas, Sebastian Vollmer, Katherine Brown,
+On behalf of the CVD-COVID-UK/COVID-IMPACT consortium**
+
 ## Project description
 
 To describe childhood hospitalisations related to SARS-CoV-2, in terms of admissions caused or contributed to by SARS-CoV-2 infection, versus admissions that were incidental to infection; and to explore the role of demographics, underlying health conditions, and variant eras in these admissions.
