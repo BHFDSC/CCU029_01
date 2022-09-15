@@ -385,10 +385,19 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
   * E.g. '9 months' for pregnancy
 
 
-## Green Book UHC phenotyping algorithm
+## Green Book UHC and risk factor phenotyping algorithm
 
-* Obesity (Note here, there are additional BMI values and Weight-for-age / BMI-for-age Z-scores may imply this UHC)
-* Pregnancy (Note here the standard approach does not apply, we only count pregnancy codes occurring in the previous 9 months OR within the admission if one is present)
+Individuals / events may be associated with as many UHC / risk factors as apply to them per the codes below that appear in their previous medical records. Note that the two "chapter filter" columns only denote subsets of codes that exist within the chapters or sections mentioned in the "include" columns; the codes they contain **do not** imply the presence of the UHC. This allows a user to join a full code dictionary with the include codes and then subsequently filter these columns, rather than us writing out every single code under a chapter except one in the cases where that one code should not denote a UHC despite the rest of the chapter doing so.
+
+Two of the risk factors below are more complex in their identification:
+* Obesity:
+  * Age must be greater than or equal to 16 for a person to be considered at all
+  * Given the above age requirement is met:
+    * BMI must be greater than 40, or
+    * Weight-for-age or BMI-for-age Z-score must be greater than 3
+* Pregnancy:
+  * If the event in question involves an admission, pregnancy should only be implied if one of the appropriate codes is present amongst the diagnostic codes for that admission
+  * Else the lookback period across other records should be limited to nine months
 
 <table style="undefined;table-layout: fixed; width: 1734px">
 <colgroup>
