@@ -212,4 +212,4 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 * `Filter` denotes whether the presence of the code determines inclusion or exclusion in the phenotype (`Include`/`Filter`, respectively)
   * Note the term `Filter` is used instead of Exclusion as the presence of a filter code does not exclude the patient having a phenotype, *if* they have another inclusion code
 * `Lookback` denotes whether the previous time window over which a phenotype is valid
-  * E.g. `9 months` for pregnancy
+  * E.g. '9 months' for pregnancy
