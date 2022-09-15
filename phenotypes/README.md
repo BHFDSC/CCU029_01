@@ -1,3 +1,14 @@
+
+# Phenotypes
+Click links to skip to relevant section:
+* [COVID-19 phenotypes](#COVID-19-phenotypes)
+  * [Study population inclusion criteria](#Study-population-inclusion-criteria)  
+  * [COVID-19 admission types](#COVID-19-admission-types)  
+  * [COVID-19 admission types codelists](#COVID-19-admission-types-codelists)  
+  * [COVID-19 admission types phenotyping algorithm](#COVID-19-admission-types-phenotyping-algorithm)  
+
+
+
 # COVID-19 phenotypes
 
 ## Study population inclusion criteria
