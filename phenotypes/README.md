@@ -16,7 +16,7 @@ This description defines the study population with a SARS-CoV-2 related admissio
 
 ## COVID-19 admission types
 In this work we classify COVID-19 admissions into the following types:
-> * Nosocomial  
+> * **Nosocomial**: First instance of a SARS-CoV-2 related code / positive test on day 8 or later of admission  
 > * **Type C**: *Incidental* cases where there is a primary diagnosis which appears unrelated to SARS-CoV-2
 > * **PIMS-TS**: All cases, with sepsis explicitly excluded due to code overlap
 > * **Type A1**: SARS-CoV-2 infection is listed as a primary reason for hospital admission
@@ -28,6 +28,14 @@ In this work we classify COVID-19 admissions into the following types:
 ## COVID-19 admission types codelists
 
 Machine-readable codelists are available within the `codelists/` folder as `.csv` files.  
+ 
+* [`covid-19_type_c.csv`](codelists/covid-19_type_c.csv)
+* [`covid-19_pims-ts.csv`](codelists/covid-19_pims-ts.csv)
+* [`covid-19_type_a1.csv`](codelists/covid-19_type_a1.csv)
+* [`covid-19_type_a3.csv`](codelists/covid-19_type_a2.csv)
+* [`covid-19_type_b1.csv`](codelists/covid-19_type_b1.csv)
+* [`covid-19_type_b2.csv`](codelists/covid-19_type_b2.csv)
+
 
 💡 Users working within the NHS Digital Trusted Research Environment (TRE) should use the associated Databricks notebooks to implement these phenotypes in a more efficient manner!
 
