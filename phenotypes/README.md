@@ -24,7 +24,29 @@ In this work we classify COVID-19 admissions into the following types:
 > * **Type B1**: Acute conditions linked to COVID-19 or that are known to co-occur with COVID-19
 > * **Type B2**: Underlying health conditions that are known to make patients sicker with COVID-19 or are conditions that make hospitalisation more likely
 
+
+## COVID-19 admission types codelists
+
+Machine-readable codelists are available within the `codelists/` folder as `.csv` files.  
+
+💡 Users working within the NHS Digital Trusted Research Environment (TRE) should use the associated Databricks notebooks to implement these phenotypes in a more efficient manner!
+
+**Schema**:
+* `Phenotype` the same as the file-name  
+* `Terminology` ICD-10 for all codes  
+* `Code` the ICD-10 code  
+* `Description` is the description of the ICD-10 code
+  * ❗ Note some of the codes present are *partial* ICD-10 codes.
+    * e.g. `E7` which includes codes spanning `E70` ('*Disorders of aromatic amino-acid metabolism*') to `E79.9` ('*Disorder of purine and pyrimidine metabolism, unspecified*')
+    * Hence these don't have an associated description. 
+    * This method was adopted to reduce the burden of specification on clinicians generating codelists.
+    * These phenotypes are applied using partial string matching.
+* `Position` denotes whether the code is `Primary` (i.e. `DIAG_4_01` in HES APC) or Non-Primary (i.e. `DIAG_4_02`-`DIAG_4_20`  in HES APC)  
+* `Filter` denotes whether the presence of the code determines inclusion or exclusion in the phenotype (`Include`/`Exclude`, respectively)
+
 <br>
+
+## COVID-19 admission types phenotyping algorithm
 
 ❗ Notes on applying the phenotyping algorithm:
 
