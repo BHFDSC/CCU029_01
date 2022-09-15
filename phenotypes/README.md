@@ -1,5 +1,40 @@
 # COVID-19 phenotypes
 
+## Study population inclusion criteria
+
+All *first* hospital admissions occurring amongst *first* infections in our cohort as defined where the admission date is in the study era ()and there is one of:  
+
+- a) `U071`, `U072` codes occurring in any position in their diagnosis (acute COVID-19 codes)  
+
+- b) `U073`, `U074` codes occurring in a primary position only (the other two SARS-CoV-2 infection related codes)  
+
+- c) a PIMS-TS code (`R65`, `M303`, `U075`) alongside none of the exclude codes (see PIMS-TS row) after the date PIMS-TS was defined (May 2020)   
+
+- d) A positive test for COVID-19 14 days before hospitalisation up to the date of discharge.   
+
+This description defines the study population with a SARS-CoV-2 related admission.
+
+## COVID-19 admission types
+In this work we classify COVID-19 admissions into the following types:
+> * Nosocomial  
+> * **Type C**: *Incidental* cases where there is a primary diagnosis which appears unrelated to SARS-CoV-2
+> * **PIMS-TS**: All cases, with sepsis explicitly excluded due to code overlap
+> * **Type A1**: SARS-CoV-2 infection is listed as a primary reason for hospital admission
+> * **Type A2**: A COVID-19 symptom or typical/plausible presentations of COVID-19 is a primary reason for admission, alongside the presence of other evidence of SARS-CoV-2 infection via either a code or test
+> * **Type B1**: Acute conditions linked to COVID-19 or that are known to co-occur with COVID-19
+> * **Type B2**: Underlying health conditions that are known to make patients sicker with COVID-19 or are conditions that make hospitalisation more likely
+
+<br>
+
+❗ Notes on applying the phenotyping algorithm:
+
+* The following typing algorithm is applied **on the above study population**
+* This is a *hierarchical* phenotyping algorithm and therefore must be applied in the order listed below ('Typing hierarchy order')
+* The population remaining at Step 8 is excluded
+
+<br>
+
+
 <table style="undefined;table-layout: fixed; width: 2477px">
 <colgroup>
 <col style="width: 404.005682px">
@@ -25,7 +60,7 @@
 </thead>
 <tbody>
   <tr>
-    <td>All first hospital admissions occurring amongst first infections in our cohort as defined where the admission date is in the study era and there is one of:  <br>a) U071, U072 codes occurring in any position in their diagnosis (acute COVID-19 codes)  <br>b) U073, U074 codes occurring in a primary position only (the other two SARS-CoV-2 infection related codes)  <br>c) a PIMS-TS code (R65, M303, U075) alongside none of the exclude codes (see PIMS-TS row) after the date PIMS-TS was defined (May 2020)   <br>d) A positive test for COVID-19 14 days before hospitalisation up to the date of discharge.   <br>This description defines the study population with a SARS-CoV-2 related admission.</td>
+    <td>Study population (as described above)</td>
     <td>1</td>
     <td>Nosocomial: As defined by Healthcare-associated Covid-19 in England: A national data linkage study. Bhattacharya, Alex et al. Journal of Infection, Volume 83, Issue 5, 565 – 572</td>
     <td></td>
