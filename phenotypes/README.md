@@ -214,6 +214,120 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 * `Lookback` denotes whether the previous time window over which a phenotype is valid
   * E.g. '9 months' for pregnancy
 
+
+## UHC Phenotyping algorithm
+
+* Obesity (Note here BMI values and Weight-for-age / BMI-for-age Z-scores may imply   this UHC)
+* Pregnancy (Note here the standard approach does not apply, we only count pregnancy  codes occurring in the previous 9 months OR within the admission if one is   present)
+
+
+<table style="undefined;table-layout: fixed; width: 1552px">
+<colgroup>
+<col style="width: 283.005682px">
+<col style="width: 512.005682px">
+<col style="width: 151.005682px">
+<col style="width: 469.005682px">
+<col style="width: 137.005682px">
+</colgroup>
+<thead>
+  <tr>
+    <th>UHC Name</th>
+    <th>Include Codes</th>
+    <th>Include Codes <br>(5 Year Lookback)</th>
+    <th>Include Code <br>Chapter Filters</th>
+    <th>Include Code <br>Chapter Filters   <br>(5 Year Lookback)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Blood Disorders and Immune Deficiencies</td>
+    <td>B2,<br>D55,D56,D57,D58,D60,D61,D64,D66,D67,D680,D681,D682,D71,D730,D731,D8</td>
+    <td></td>
+    <td>B25,B26,B27,B28,B29,<br>D649</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Cancer and Neoplasms</td>
+    <td></td>
+    <td>C,D0,D4</td>
+    <td></td>
+    <td>D473</td>
+  </tr>
+  <tr>
+    <td>Endocrine Conditions</td>
+    <td>E0,E1,E2,E3,E4,E7,E8</td>
+    <td></td>
+    <td>E231,E232,E86,E87,E162</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Neurological and Developmental Conditions</td>
+    <td>F7,F8,F9,<br>G1,G2,G3,G4,G5,G6,G7,G8,G9,<br>H17,H18,H19,H26,H33,H35,H40,H42,H46,H47,H48,H54,H90,H91,<br>I673,I675,I69,<br>P21,<br>Q0,Q1,Q9,<br>R62</td>
+    <td></td>
+    <td>F93,F94,F98,F99,<br>G25,G43,G44,G45,G46,G92,G93,G96,G97,G98,<br>H471</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Respiratory Conditions</td>
+    <td>E84,<br>J380,J386,J41,J42,J43,J44,J45,J46,J47,J82,J84,J99,<br>Q30,Q31,Q32,Q33,Q34</td>
+    <td>P27</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Congenital Heart Disease and Hypertension and Acquired Heart disease</td>
+    <td>I05,I06,I07,I08,I10,I11,I12,I13,I14,I15,I21,I22,I27,I28,I34,I35,I36,I37,I42,I43,I44,<br>Q2</td>
+    <td></td>
+    <td>Q245</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Digestive and Liver Conditions</td>
+    <td>K44,K50,K51,K52,K71,K721,K740,K741,K744,K745,K75,K754,K90,<br>Q35,Q36,Q37,Q39,Q4</td>
+    <td>K21,K22</td>
+    <td>K528,K529</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Muscle and Skin and Arthritis</td>
+    <td>L1,L4,L85,L93,L94,<br>M0,M1,M3,M41,M42,M43,<br>Q65,Q66,Q67,Q68,Q69,Q7,Q8</td>
+    <td></td>
+    <td>M01,M02,M03,M04,M303,<br>Q668,Q690,Q691,Q692,Q699,Q700,Q701,Q702,Q703,Q825,Q828,Q829</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Renal and Genitourinary conditions</td>
+    <td>N0,N11,N12,N13,N15,N18,N31,N32,<br>Q5,Q60,Q61,Q62,Q63,Q64</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Prematurity and low birth weight</td>
+    <td></td>
+    <td>P05,P07</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Obesity</td>
+    <td>E66</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Pregnancy</td>
+    <td>O</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+<br>
+<br>
+
 ---
 
 # Green Book Underlying Health Conditions (UHCs)
@@ -253,3 +367,114 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
   * Note the term `Filter` is used instead of Exclusion as the presence of a filter code does not exclude the patient having a phenotype, *if* they have another inclusion code
 * `Lookback` denotes whether the previous time window over which a phenotype is valid
   * E.g. '9 months' for pregnancy
+
+
+## Green Book UHC phenotyping algorithm
+
+* Obesity (Note here BMI values and Weight-for-age / BMI-for-age Z-scores may imply   this UHC)
+* Pregnancy (Note here the standard approach does not apply, we only count pregnancy  codes occurring in the previous 9 months OR within the admission if one is   present)
+
+<table style="undefined;table-layout: fixed; width: 1734px">
+<colgroup>
+<col style="width: 247.005682px">
+<col style="width: 517.005682px">
+<col style="width: 134.005682px">
+<col style="width: 702.005682px">
+<col style="width: 134.005682px">
+</colgroup>
+<thead>
+  <tr>
+    <th>UHC Name</th>
+    <th>Include Codes</th>
+    <th>Include Codes <br>(5 Year Lookback)</th>
+    <th>Include Code Chapter Filters</th>
+    <th>Include Code <br>Chapter Filters   <br>(5 Year Lookback)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Cancer</td>
+    <td></td>
+    <td>C,D0,D4</td>
+    <td></td>
+    <td>D473</td>
+  </tr>
+  <tr>
+    <td>Blood Disorders and Immune Deficiencies</td>
+    <td>B20,B21,B22,B24,<br>D56,D57,D58,D61,D71,D730,D731,D8</td>
+    <td></td>
+    <td>D898,D899</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Endocrine Conditions</td>
+    <td>E10,E11,E12,E13,E14,E22,E23,E24,E25,E26,E27,E7,E80,E81,E82,E88,E89,E84</td>
+    <td></td>
+    <td>E231,E232,E739</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Severe Neurological and Developmental Conditions</td>
+    <td>F7,F80,F82,F83,F84,F85,F86,F87,F88,F89,<br>G1,G20,G21,G22,G23,G24,G26,G27,G28,G29,G3,G7,G8</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Hypertension and Cardiac Valves and Cardiomyopathy</td>
+    <td>I10,I11,I12,I13,I15,I27,I34,I35,I36,I37,I42,I43</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Severe Respiratory Diseases</td>
+    <td>J380,J386,J44,J45,J46,J47,J82,J84,J99</td>
+    <td>P27</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Digestive and Liver Diseases</td>
+    <td>K44,K50,K51,K52,K71,K721,K740,K741,K744,K745,K754,K75,K90</td>
+    <td>K21,K22</td>
+    <td>K210,K219,K220,K221,K222,K223,K224,K225,K226,K227,K228,K521,K522,K528,K529,K750,K751,K904,K908</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Renal Diseases</td>
+    <td>N0,N11,N12,N13,N15,N18</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Arthritis and Connective Tissue Diseases</td>
+    <td>M05,M06,M07,M08,M09,M3</td>
+    <td></td>
+    <td>M303,M357</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Congenital Syndromes and Anomalies</td>
+    <td>Q0,Q2,Q3,Q9,Q60,Q61,Q4,Q79,Q80,Q81,Q897</td>
+    <td></td>
+    <td>Q245,Q38</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Obesity</td>
+    <td>E66</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Pregnancy</td>
+    <td>O</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
