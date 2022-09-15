@@ -43,12 +43,12 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 * `Phenotype` the same as the file-name  
 * `Terminology` ICD-10 for all codes  
 * `Code` the ICD-10 code  
-* `Description` is the description of the ICD-10 code
   * ❗ Note some of the codes present are *partial* ICD-10 codes.
     * e.g. `E7` which includes codes spanning `E70` ('*Disorders of aromatic amino-acid metabolism*') to `E79.9` ('*Disorder of purine and pyrimidine metabolism, unspecified*')
-    * Hence these don't have an associated description. 
     * This method was adopted to reduce the burden of specification on clinicians generating codelists.
     * These phenotypes are applied using partial string matching.
+* `Description` is the description of the ICD-10 code
+    * ❗ *partial* ICD-10 codes don't have an associated description. 
 * `Position` denotes whether the code is `Primary` (i.e. `DIAG_4_01` in HES APC) or Non-Primary (i.e. `DIAG_4_02`-`DIAG_4_20`  in HES APC)  
 * `Filter` denotes whether the presence of the code determines inclusion or exclusion in the phenotype (`Include`/`Exclude`, respectively)
 
@@ -171,3 +171,45 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
   </tr>
 </tbody>
 </table>
+
+<br>
+<br>
+<br>  
+
+# Underlying Health Conditions (UHCs)
+
+## UHC codelists
+
+Machine-readable codelists are available within the `codelists/` folder as `.csv` files.  
+ 
+* [`uhc_blood_disorders_and_immune_deficiencies.csv`](codelists/uhc_blood_disorders_and_immune_deficiencies.csv)
+* [`uhc_cancer_and_neoplasms.csv`](codelists/uhc_cancer_and_neoplasms.csv)
+* [`uhc_endocrine_conditions.csv`](codelists/uhc_endocrine_conditions.csv)
+* [`uhc_neurological_and_developmental_conditions.csv`](codelists/uhc_neurological_and_developmental_conditions.csv)
+* [`uhc_respiratory_conditions.csv`](codelists/uhc_respiratory_conditions.csv)
+* [`uhc_congenital_heart_disease_and_hypertension_and_acquired_heart_disease.csv`](codelists/uhc_congenital_heart_disease_and_hypertension_and_acquired_heart_disease.csv)
+* [`uhc_digestive_and_liver_conditions.csv`](codelists/uhc_digestive_and_liver_conditions.csv)
+* [`uhc_muscle_and_skin_and_arthritis.csv`](codelists/uhc_muscle_and_skin_and_arthritis.csv)
+* [`uhc_renal_and_genitourinary_conditions.csv`](codelists/uhc_renal_and_genitourinary_conditions.csv)
+* [`uhc_prematurity_and_low_birth_weight.csv`](codelists/uhc_prematurity_and_low_birth_weight.csv)
+* [`uhc_obesity.csv`](codelists/uhc_obesity.csv)
+* [`uhc_pregnancy.csv`](codelists/uhc_pregnancy.csv)
+
+
+
+💡 Users working within the NHS Digital Trusted Research Environment (TRE) should use the associated Databricks notebooks to implement these phenotypes in a more efficient manner!
+
+**Schema**:
+* `Phenotype` the same as the file-name  
+* `Terminology` ICD-10 for all codes  
+* `Code` the ICD-10 code  
+  * ❗ Note some of the codes present are *partial* ICD-10 codes.
+    * e.g. `E7` which includes codes spanning `E70` ('*Disorders of aromatic amino-acid metabolism*') to `E79.9` ('*Disorder of purine and pyrimidine metabolism, unspecified*')
+    * This method was adopted to reduce the burden of specification on clinicians generating codelists.
+    * These phenotypes are applied using partial string matching.
+* `Description` is the description of the ICD-10 code
+    * ❗ *partial* ICD-10 codes don't have an associated description. 
+* `Filter` denotes whether the presence of the code determines inclusion or exclusion in the phenotype (`Include`/`Filter`, respectively)
+  * Note the term `Filter` is used instead of Exclusion as the presence of a filter code does not exclude the patient having a phenotype, *if* they have another inclusion code
+* `Lookback` denotes whether the previous time window over which a phenotype is valid
+  * E.g. `9 months` for pregnancy
