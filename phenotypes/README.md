@@ -76,7 +76,7 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 
 * The following typing algorithm is applied **on the above study population**
 * This is a *hierarchical* phenotyping algorithm and therefore must be applied in the order listed below ('Typing hierarchy order')
-* The population remaining at Step 8 is excluded
+* The population remaining at Step 8 is excluded as assumed non-COVID related
 
 <br>
 
@@ -387,8 +387,8 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 
 ## Green Book UHC phenotyping algorithm
 
-* Obesity (Note here BMI values and Weight-for-age / BMI-for-age Z-scores may imply   this UHC)
-* Pregnancy (Note here the standard approach does not apply, we only count pregnancy  codes occurring in the previous 9 months OR within the admission if one is   present)
+* Obesity (Note here, there are additional BMI values and Weight-for-age / BMI-for-age Z-scores may imply this UHC)
+* Pregnancy (Note here the standard approach does not apply, we only count pregnancy codes occurring in the previous 9 months OR within the admission if one is present)
 
 <table style="undefined;table-layout: fixed; width: 1734px">
 <colgroup>
