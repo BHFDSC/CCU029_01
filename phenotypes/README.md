@@ -213,3 +213,43 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
   * Note the term `Filter` is used instead of Exclusion as the presence of a filter code does not exclude the patient having a phenotype, *if* they have another inclusion code
 * `Lookback` denotes whether the previous time window over which a phenotype is valid
   * E.g. '9 months' for pregnancy
+
+---
+
+# Green Book Underlying Health Conditions (UHCs)
+
+## Green Book UHC codelists
+
+Machine-readable codelists are available within the `codelists/` folder as `.csv` files.  
+ 
+* [`green_book_blood_disorders_and_immune_deficiencies.csv`](codelists/green_book_blood_disorders_and_immune_deficiencies.csv)
+* [`green_book_cancer.csv`](codelists/green_book_cancer.csv)
+* [`green_book_endocrine_conditions.csv`](codelists/green_book_endocrine_conditions.csv)
+* [`green_book_severe_neurological_and_developmental_conditions.csv`](codelists/green_book_severe_neurological_and_developmental_conditions.csv)
+* [`green_book_hypertension_and_cardiac_valves_and_cardiomyopathy.csv`](codelists/green_book_hypertension_and_cardiac_valves_and_cardiomyopathy.csv)
+* [`green_book_severe_respiratory_diseases.csv`](codelists/green_book_severe_respiratory_diseases.csv)
+* [`green_book_digestive_and_liver_diseases.csv`](codelists/green_book_digestive_and_liver_diseases.csv)
+* [`green_book_renal_diseases.csv`](codelists/green_book_renal_diseases.csv)
+* [`green_book_arthritis_and_connective_tissue_diseases.csv`](codelists/green_book_arthritis_and_connective_tissue_diseases.csv)
+* [`green_book_congenital_syndromes_and_anomalies.csv`](codelists/green_book_congenital_syndromes_and_anomalies.csv)
+* [`green_book_obesity.csv`](codelists/green_book_obesity.csv)
+* [`green_book_pregnancy.csv`](codelists/green_book_pregnancy.csv)
+
+
+
+💡 Users working within the NHS Digital Trusted Research Environment (TRE) should use the associated Databricks notebooks to implement these phenotypes in a more efficient manner!
+
+**Schema**:
+* `Phenotype` the same as the file-name  
+* `Terminology` ICD-10 for all codes  
+* `Code` the ICD-10 code  
+  * ❗ Note some of the codes present are *partial* ICD-10 codes.
+    * e.g. `E7` which includes codes spanning `E70` ('*Disorders of aromatic amino-acid metabolism*') to `E79.9` ('*Disorder of purine and pyrimidine metabolism, unspecified*')
+    * This method was adopted to reduce the burden of specification on clinicians generating codelists.
+    * These phenotypes are applied using partial string matching.
+* `Description` is the description of the ICD-10 code
+    * ❗ *partial* ICD-10 codes don't have an associated description. 
+* `Filter` denotes whether the presence of the code determines inclusion or exclusion in the phenotype (`Include`/`Filter`, respectively)
+  * Note the term `Filter` is used instead of Exclusion as the presence of a filter code does not exclude the patient having a phenotype, *if* they have another inclusion code
+* `Lookback` denotes whether the previous time window over which a phenotype is valid
+  * E.g. '9 months' for pregnancy
