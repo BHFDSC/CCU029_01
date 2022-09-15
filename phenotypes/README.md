@@ -6,8 +6,13 @@ Click links to skip to relevant section:
   * [COVID-19 admission types](#COVID-19-admission-types)  
   * [COVID-19 admission types codelists](#COVID-19-admission-types-codelists)  
   * [COVID-19 admission types phenotyping algorithm](#COVID-19-admission-types-phenotyping-algorithm)  
-
-
+* [Underlying Health Conditions (UHCs)](#Underlying-Health-Conditions-(UHCs))
+  * [UHC codelists](#UHC-codelists)  
+  * [UHC Phenotyping algorithm](#UHC-Phenotyping-algorithm)   
+* [Green Book Underlying Health Conditions (UHCs)](#Green-Book-Underlying-Health-Conditions-(UHCs))
+  * [Green Book UHC codelists](#Green-Book-UHC-codelists)  
+  * [Green Book UHC phenotyping algorithm](#Green-Book-UHC-phenotyping-algorithm)  
+<br>
 
 # COVID-19 phenotypes
 
