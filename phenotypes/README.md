@@ -76,6 +76,7 @@ Machine-readable codelists are available within the `codelists/` folder as `.csv
 
 * The following typing algorithm is applied **on the above study population**
 * This is a *hierarchical* phenotyping algorithm and therefore must be applied in the order listed below ('Typing hierarchy order')
+* The PIMS-TS definition only applies after May 2020 when the condition was first defined, the codes see some shared usage with sepsis and so using them before May 2020 may be invalid
 * The population remaining at Step 8 is excluded as assumed non-COVID related
 
 <br>
