@@ -1,3 +1,8 @@
+# Databricks notebook source
+# Sourced from Kate's UHC definitions document
+
+# COMMAND ----------
+
 UHC = {
     "MD" : """name,includes,includes_5_years,excludes,excludes_5_years
 Blood Disorders and Immune Deficiencies,"B2,D55,D56,D57,D58,D60,D61,D64,D66,D67,D680,D681,D682,D71,D730,D731,D8",,"B25,B26,B27,B28,B29,D649",
@@ -25,4 +30,4 @@ Arthritis and Connective Tissue Diseases,"M05,M06,M07,M08,M09,M3",,"M303,M357",
 Congenital Syndromes and Anomalies,"Q0,Q2,Q3,Q9,Q60,Q61,Q4,Q79,Q80,Q81,Q897",,"Q245,Q38",
 Obesity,E66,,,
 Pregnancy,O,,,"""
-} 
+}
