@@ -1,9 +1,9 @@
 # Databricks notebook source
-# MAGIC %run ./config/quiet
+# MAGIC %run ../config/quiet
 
 # COMMAND ----------
 
-# MAGIC %run ../00/helper_functions
+# MAGIC %run ../auxiliary/helper_functions
 
 # COMMAND ----------
 
@@ -11,7 +11,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run ../00/ethnicity_and_sex
+# MAGIC %run ../auxiliary/ethnicity_and_sex
 
 # COMMAND ----------
 
@@ -265,5 +265,4 @@ ORDER BY N_OCCURRENCES DESC""")
   display(table)
 
 # COMMAND ----------
-
 

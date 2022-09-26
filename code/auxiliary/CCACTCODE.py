@@ -9,7 +9,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run /Workspaces/dars_nic_391419_j3w9t_collab/CCU029/helper_functions
+# MAGIC %run ./helper_functions
 
 # COMMAND ----------
 
