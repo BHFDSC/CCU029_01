@@ -81,20 +81,16 @@ This proposed new analysis is important because the American Association of Pedi
 **Objective 1**
 
 
-    Create and describe a classification of paediatric hospital admissions linked to SARS-CoV-2 infection as one of: a) primarily due to SARS-CoV-2 (including acute COVID-19 syndrome and paediatric inflammatory multisystem syndrome temporally associated with SARS-CoV-2 (PIMS-TS)); b) admissions where SARS-CoV-2 was likely to be on the causal pathway; c) admissions with incidental infection; or d) nosocomial infections.
+Create and describe a classification of paediatric hospital admissions linked to SARS-CoV-2 infection as one of: a) primarily due to SARS-CoV-2 (including acute COVID-19 syndrome and paediatric inflammatory multisystem syndrome temporally associated with SARS-CoV-2 (PIMS-TS)); b) admissions where SARS-CoV-2 was likely to be on the causal pathway; c) admissions with incidental infection; or d) nosocomial infections.
 
 **Objective 2**
 
-** **
 
+Describe the admission demographics including UHCs (both as defined by the Joint Committee on Vaccination and Immunisation (JCVI) and a wider selection of non-acute paediatric UHCs identified by a panel of consultant paediatricians);
 
-    Describe the admission demographics including UHCs (both as defined by the Joint Committee on Vaccination and Immunisation (JCVI) and a wider selection of non-acute paediatric UHCs identified by a panel of consultant paediatricians);
+**Objective 3**
 
-**Objective 3 **
-
-
-## 
-    Describe trends in first ascertained SARS-CoV-2 cases, hospital, and Intensive Care Unit (ICU) admissions, and CHRs, stratified by dominant variant eras (Original, Alpha, Delta, and Omicron).
+Describe trends in first ascertained SARS-CoV-2 cases, hospital, and Intensive Care Unit (ICU) admissions, and CHRs, stratified by dominant variant eras (Original, Alpha, Delta, and Omicron).
 
 
 ## Data sources
