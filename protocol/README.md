@@ -211,44 +211,34 @@ This process has resulted from consultation with a consultant paediatrician pane
   <tr>
    <td>
     <strong>4)   Admissions directly caused by SARS-CoV-2 infection</strong>
-<p>
 
-    <strong>“Type A”</strong>
-<p>
-
-    <strong> </strong>
    </td>
    <td>
     Next, we classified admissions where the main reason was acute SARS-CoV-2 infection (Type A) as follows:
 <p>
 
-    Type A1) A primary reason for admission was a Covid Code ((U07.1, U07.2, U07.3, U07.4)<a href="https://paperpile.com/c/npFJxx/4D3N">[14]</a>.
+**Type A1**) A primary reason for admission was a Covid Code ((U07.1, U07.2, U07.3, U07.4)<a href="https://paperpile.com/c/npFJxx/4D3N">[14]</a>.
 <p>
 
-    Type A2) A primary reason for admission was a sign, symptom, or condition/presentation consistent with an acute SARS-CoV-2 infection (and did not definitively indicate an alternative diagnosis) and a non-primary reason for admission was a code for acute covid (U07.1 or U07.2). The candidate list of signs, symptoms or conditions of SARS-CoV-2 infection was identified from prospective studies including ISARIC and international studies<a href="https://paperpile.com/c/npFJxx/iF37+CyFV+A1dN+Wr2N+zmp5">[2,13,18–20]</a> as: unspecified viral infections, viral conjunctivitis, volume depletion, shock, acidosis, otitis media, croup, non-specific bronchiolitis, cough, fever, vomiting, diarrhoea, myalgia, headache, , arrhythmias, tonsilitis, pharyngitis, laryngitis.
+**Type A2**) A primary reason for admission was a sign, symptom, or condition/presentation consistent with an acute SARS-CoV-2 infection (and did not definitively indicate an alternative diagnosis) and a non-primary reason for admission was a code for acute covid (U07.1 or U07.2). The candidate list of signs, symptoms or conditions of SARS-CoV-2 infection was identified from prospective studies including ISARIC and international studies<a href="https://paperpile.com/c/npFJxx/iF37+CyFV+A1dN+Wr2N+zmp5">[2,13,18–20]</a> as: unspecified viral infections, viral conjunctivitis, volume depletion, shock, acidosis, otitis media, croup, non-specific bronchiolitis, cough, fever, vomiting, diarrhoea, myalgia, headache, , arrhythmias, tonsilitis, pharyngitis, laryngitis.
 <p>
 
-    These admissions may or may not have been linked to a Positive test.
+These admissions may or may not have been linked to a Positive test.
    </td>
   </tr>
   <tr>
    <td>
     <strong>5)  Admissions with SARS-CoV-2 infection as likely contributor</strong>
-<p>
 
-    <strong>“Type B”</strong>
-<p>
-
-    <strong> </strong>
    </td>
    <td>
     Finally, we assigned admissions where SARS-CoV-2 infection was likely to be on the causal pathway, albeit not the primary cause of the admission (Type B). These hospitalisations may or may not have been linked to a Positive test, and all had a code for acute covid (U07.1 or U07.2) as a non-primary reason for hospital admission, combined with one of the following primary reasons for admission that were all deemed relevant based on published reports<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a> or, given the emerging nature of the topic, based on expert clinical experience:
 <p>
 
-    Type B1) A condition known to co-occur with SARS-CoV-2 (co or secondary infections such as respiratory syncytial virus, adenovirus, staphylococcal pneumonia, streptococcal pneumonia)<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>;  a condition that has been clinically linked to SARS-CoV-2 infection in children<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(type 1 diabetes mellitus, status epilepticus or febrile seizures); or a small number of treatments that could be linked to SARS-CoV-2 infection (isolation in cubicle for droplet precautions).
+**Type B1**) A condition known to co-occur with SARS-CoV-2 (co or secondary infections such as respiratory syncytial virus, adenovirus, staphylococcal pneumonia, streptococcal pneumonia)<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>;  a condition that has been clinically linked to SARS-CoV-2 infection in children<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(type 1 diabetes mellitus, status epilepticus or febrile seizures); or a small number of treatments that could be linked to SARS-CoV-2 infection (isolation in cubicle for droplet precautions).
 <p>
 
-    Type B2) A pre-existing or newly diagnosed condition associated with higher risk of severe illness from COVID-19<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(conditions treated with immunosuppression, any cancer, neurodevelopmental conditions that may affect breathing, neonatal conditions such as poor feeding, respiratory diseases such as asthma).
+**Type B2**) A pre-existing or newly diagnosed condition associated with higher risk of severe illness from COVID-19<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(conditions treated with immunosuppression, any cancer, neurodevelopmental conditions that may affect breathing, neonatal conditions such as poor feeding, respiratory diseases such as asthma).
    </td>
   </tr>
 </table>
