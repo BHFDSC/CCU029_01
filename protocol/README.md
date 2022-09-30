@@ -1,8 +1,10 @@
+<!-- Output copied to clipboard! -->
+
 <!-----
 
 Yay, no errors, warnings, or alerts!
 
-Conversion time: 1.498 seconds.
+Conversion time: 1.479 seconds.
 
 
 Using this Markdown file:
@@ -15,7 +17,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β33
-* Thu Sep 29 2022 10:40:59 GMT-0700 (PDT)
+* Thu Sep 29 2022 23:21:35 GMT-0700 (PDT)
 * Source doc: CCU029_01 Protocol
 * Tables are currently converted to HTML tables.
 ----->
@@ -193,21 +195,21 @@ This process has resulted from consultation with a consultant paediatrician pane
    <td><strong>1) Nosocomial admissions</strong>
    </td>
    <td>
-    Consistent with definitions used by NHS England<sup>21</sup>, we classified an admission as nosocomial if the first associated Positive test occurred between day 8 of hospitalisation and hospital discharge and there were no Covid codes (U07.1, U07.2) provided as a cause for hospitalisation before day 8 of the admission .
+    Consistent with definitions used by NHS England<a href="https://paperpile.com/c/npFJxx/u4ZE">[12]</a>, we classified an admission as nosocomial if the first associated Positive test occurred between day 8 of hospitalisation and hospital discharge and there were no Covid codes (U07.1, U07.2) provided as a cause for hospitalisation before day 8 of the admission .
    </td>
   </tr>
   <tr>
    <td><strong>2)  Incidental Admissions  “Type C”</strong>
    </td>
    <td>
-    We classified incidental admissions before those directly caused by or contributed to by SARS-CoV-2 infection, to remove the possibility that this type of admission could be misclassified. These are admissions where SARS-CoV-2 is not the cause but is coincidental due to community transmission. Candidate reasons were identified in the International Severe Acute Respiratory and emerging Infection Consortium (ISARIC) prospective study of COVID-19 in children, such as trauma, poisoning, or elective surgery.<sup>22</sup> We identified and included a wider range of relevant primary reasons for admission than ISARIC, by iterative clinical review of codes in the admissions dataset (Supplementary Materials Table A: mental health disorders, eye conditions, dental conditions, injuries, trauma, assault, self-harm, poisoning, surgical problems such as those affecting bowel or testis, certain pregnancy related conditions). Incidental admissions all had codes U07.1 or U07.2 as a non-primary reason for admission and / or a Positive test before day 8 of the admission.
+    We classified incidental admissions before those directly caused by or contributed to by SARS-CoV-2 infection, to remove the possibility that this type of admission could be misclassified. These are admissions where SARS-CoV-2 is not the cause but is coincidental due to community transmission. Candidate reasons were identified in the International Severe Acute Respiratory and emerging Infection Consortium (ISARIC) prospective study of COVID-19 in children, such as trauma, poisoning, or elective surgery<a href="https://paperpile.com/c/npFJxx/iF37">[13]</a>. We identified and included a wider range of relevant primary reasons for admission than ISARIC, by iterative clinical review of codes in the admissions dataset (mental health disorders, eye conditions, dental conditions, injuries, trauma, assault, self-harm, poisoning, surgical problems such as those affecting bowel or testis, certain pregnancy related conditions). Incidental admissions all had codes U07.1 or U07.2 as a non-primary reason for admission and / or a Positive test before day 8 of the admission.
    </td>
   </tr>
   <tr>
    <td><strong>3)  Paediatric Inflammatory Multisystem Syndrome with a temporal association with SARS-COV-2 (PIMS-TS) Admissions</strong>
    </td>
    <td>
-    We classified an admission as PIMS-TS if a reason for hospitalisation was a PIMS-TS Code (R65, M30.3, U07.5) ,<sup>20</sup> but none of the pre-specified exclude codes (Supplementary Materials Table A) indicating an alternative diagnosis of sepsis or major bacterial infection were present. Patients with PIMS-TS admission type could also have a Covid code as a reason for admission and may or may not have a Positive test as it has previously been demonstrated that the majority are PCR negative.<sup>23-25</sup> After clinical review of the ICD-10 codes listed as the reasons for admission amongst children who had a PIMS-TS code as a non-primary reason for admission, these were included because (after applying the listed exclusion codes) these codes were consistent with a diagnosis of PIMS-TS.
+    We classified an admission as PIMS-TS if a reason for hospitalisation was a PIMS-TS Code (R65, M30.3, U07.5)<a href="https://paperpile.com/c/npFJxx/4D3N">[14]</a>,  but none of the exclude codes indicating an alternative diagnosis of sepsis or major bacterial infection were present. Patients with PIMS-TS admission type could also have a Covid code as a reason for admission and may or may not have a Positive test as it has previously been demonstrated that the majority are PCR negative<a href="https://paperpile.com/c/npFJxx/seVD+iVAE+no6k">[15–17]</a>. After clinical review of the ICD-10 codes listed as the reasons for admission amongst children who had a PIMS-TS code as a non-primary reason for admission, these were included because (after applying the listed exclusion codes) these codes were consistent with a diagnosis of PIMS-TS.
    </td>
   </tr>
   <tr>
@@ -224,10 +226,10 @@ This process has resulted from consultation with a consultant paediatrician pane
     Next, we classified admissions where the main reason was acute SARS-CoV-2 infection (Type A) as follows:
 <p>
 
-    Type A1) A primary reason for admission was a Covid Code ((U07.1, U07.2, U07.3, U07.4).<sup>20</sup>
+    Type A1) A primary reason for admission was a Covid Code ((U07.1, U07.2, U07.3, U07.4)<a href="https://paperpile.com/c/npFJxx/4D3N">[14]</a>.
 <p>
 
-    Type A2) A primary reason for admission was a sign, symptom, or condition/presentation consistent with an acute SARS-CoV-2 infection (and did not definitively indicate an alternative diagnosis) and a non-primary reason for admission was a code for acute covid (U07.1 or U07.2). The candidate list of signs, symptoms or conditions of SARS-CoV-2 infection was identified from prospective studies including ISARIC and international studies <sup>22 26-29</sup> as: unspecified viral infections, viral conjunctivitis, volume depletion, shock, acidosis, otitis media, croup, non-specific bronchiolitis, cough, fever, vomiting, diarrhoea, myalgia, headache, , arrhythmias, tonsilitis, pharyngitis, laryngitis (Supplementary Materials Table A).
+    Type A2) A primary reason for admission was a sign, symptom, or condition/presentation consistent with an acute SARS-CoV-2 infection (and did not definitively indicate an alternative diagnosis) and a non-primary reason for admission was a code for acute covid (U07.1 or U07.2). The candidate list of signs, symptoms or conditions of SARS-CoV-2 infection was identified from prospective studies including ISARIC and international studies<a href="https://paperpile.com/c/npFJxx/iF37+CyFV+A1dN+Wr2N+zmp5">[2,13,18–20]</a> as: unspecified viral infections, viral conjunctivitis, volume depletion, shock, acidosis, otitis media, croup, non-specific bronchiolitis, cough, fever, vomiting, diarrhoea, myalgia, headache, , arrhythmias, tonsilitis, pharyngitis, laryngitis.
 <p>
 
     These admissions may or may not have been linked to a Positive test.
@@ -244,13 +246,13 @@ This process has resulted from consultation with a consultant paediatrician pane
     <strong> </strong>
    </td>
    <td>
-    Finally, we assigned admissions where SARS-CoV-2 infection was likely to be on the causal pathway, albeit not the primary cause of the admission (Type B). These hospitalisations may or may not have been linked to a Positive test, and all had a code for acute covid (U07.1 or U07.2) as a non-primary reason for hospital admission, combined with one of the following primary reasons for admission that were all deemed relevant based on published reports <sup>30 31</sup> <sup>32</sup> <sup>22 26</sup> or, given the emerging nature of the topic, based on expert clinical experience (Supplementary Materials Table A):
+    Finally, we assigned admissions where SARS-CoV-2 infection was likely to be on the causal pathway, albeit not the primary cause of the admission (Type B). These hospitalisations may or may not have been linked to a Positive test, and all had a code for acute covid (U07.1 or U07.2) as a non-primary reason for hospital admission, combined with one of the following primary reasons for admission that were all deemed relevant based on published reports<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a> or, given the emerging nature of the topic, based on expert clinical experience:
 <p>
 
-    Type B1) A condition known to co-occur with SARS-CoV-2 (co or secondary infections such as respiratory syncytial virus, adenovirus, staphylococcal pneumonia, streptococcal pneumonia) <sup>30 31</sup> <sup>32</sup>;  a condition that has been clinically linked to SARS-CoV-2 infection in children <sup>31 32</sup> (type 1 diabetes mellitus, status epilepticus or febrile seizures); or a small number of treatments that could be linked to SARS-CoV-2 infection (isolation in cubicle for droplet precautions).
+    Type B1) A condition known to co-occur with SARS-CoV-2 (co or secondary infections such as respiratory syncytial virus, adenovirus, staphylococcal pneumonia, streptococcal pneumonia)<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>;  a condition that has been clinically linked to SARS-CoV-2 infection in children<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(type 1 diabetes mellitus, status epilepticus or febrile seizures); or a small number of treatments that could be linked to SARS-CoV-2 infection (isolation in cubicle for droplet precautions).
 <p>
 
-    Type B2) A pre-existing or newly diagnosed condition associated with higher risk of severe illness from COVID-19 <sup>22 26</sup>(conditions treated with immunosuppression, any cancer, neurodevelopmental conditions that may affect breathing, neonatal conditions such as poor feeding, respiratory diseases such as asthma).
+    Type B2) A pre-existing or newly diagnosed condition associated with higher risk of severe illness from COVID-19<a href="https://paperpile.com/c/npFJxx/JiKf+kISc+SVmC+iF37+CyFV">[2,13,21–23]</a>(conditions treated with immunosuppression, any cancer, neurodevelopmental conditions that may affect breathing, neonatal conditions such as poor feeding, respiratory diseases such as asthma).
    </td>
   </tr>
 </table>
@@ -280,8 +282,8 @@ This process has resulted from consultation with a consultant paediatrician pane
 
 * **Date of birth, sex and ethnicity** will be derived from the ‘patient skinny record’ which aggregates data across multiple sources including GDPPR and HES APC
 * **Age **will be measured at the date of first COVID-19 infection
-* **Socioeconomic deprivation** information will be derived using the 2011 Lower-layer Super Output Areas (LSOA) from GDPPR to index the 2019 English indices of deprivation[[12]](https://paperpile.com/c/npFJxx/1zkFI). Index of Multiple Deprivation (IMD) will then be mapped to fifths (1 = most deprived, 5 = least)
-* **Vaccination status** will be defined as below when appearing >= 14 days prior to COVID-19 infection, accounting for the time taken to seroconvert and in line with other studies[[13]](https://paperpile.com/c/npFJxx/mOn11)
+* **Socioeconomic deprivation** information will be derived using the 2011 Lower-layer Super Output Areas (LSOA) from GDPPR to index the 2019 English indices of deprivation[[24]](https://paperpile.com/c/npFJxx/1zkFI). Index of Multiple Deprivation (IMD) will then be mapped to fifths (1 = most deprived, 5 = least)
+* **Vaccination status** will be defined as below when appearing >= 14 days prior to COVID-19 infection, accounting for the time taken to seroconvert and in line with other studies[[25]](https://paperpile.com/c/npFJxx/mOn11)
     * Dose 1
     * Dose 2
     * Dose 3. Third primary doses and booster doses will be aggregated within ‘dose 3’ as the SNOMED-CT codes for third primary dose appear poorly utilised.
@@ -293,13 +295,13 @@ This process has resulted from consultation with a consultant paediatrician pane
     * Omicron 26th December to study end (Omicron sub-lineages will not be reported)
     * To avoid periods where there is not a single dominant variant, we will use “inter-variant” periods between each of these variant windows
 * **Underlying Health Conditions ‘UHCs’**
-    * We will consider conditions listed in ICD-10 (2019) and a scheme for identifying comorbidities in HES by Hardelid et al [[14]](https://paperpile.com/c/npFJxx/S5b7) specific to children and young people, for candidate UHC. 
+    * We will consider conditions listed in ICD-10 (2019) and a scheme for identifying comorbidities in HES by Hardelid et al [[26]](https://paperpile.com/c/npFJxx/S5b7) specific to children and young people, for candidate UHC. 
         * For young children, a first hospitalisation might be the only source of UHC information, hence we will consider any mention of congenital or chronic UHC in the EHR from birth to first ascertained infection, inclusive (this differs to adult methods where only prior history is considered). 
-        * In acquired or reversible UHC (for example, cancer, conditions of prematurity) as undertaken in prior studies based on the Hardelid paediatric UHCs we will limit these to 5 years prior to first ascertained infection[[14]](https://paperpile.com/c/npFJxx/S5b7). 
-    * We will seek to reproduce the specific subset of conditions identified by JCVI and listed in the Green Book as linked to higher risk of severe COVID-19[[15]](https://paperpile.com/c/npFJxx/iOl3)
+        * In acquired or reversible UHC (for example, cancer, conditions of prematurity) as undertaken in prior studies based on the Hardelid paediatric UHCs we will limit these to 5 years prior to first ascertained infection[[26]](https://paperpile.com/c/npFJxx/S5b7). 
+    * We will seek to reproduce the specific subset of conditions identified by JCVI and listed in the Green Book as linked to higher risk of severe COVID-19[[27]](https://paperpile.com/c/npFJxx/iOl3)
         * We will additionally identify a more expansive list clinically-judged to be chronic congenital or acquired conditions in children, excluding acute paediatric illnesses. 
     * We will use relevant ICD-10 codes from GDPPR (primary care), HES APC and HES OP (secondary care), dated up to and including the admission of interest. 
-        * In the case of GDPPR, NHS-D Technology Reference Update Distribution (TRUD) cross-maps will be used to transform SNOMED-CT codes into ICD-10 codes[[16]](https://paperpile.com/c/npFJxx/SfC5)
+        * In the case of GDPPR, NHS-D Technology Reference Update Distribution (TRUD) cross-maps will be used to transform SNOMED-CT codes into ICD-10 codes[[28]](https://paperpile.com/c/npFJxx/SfC5)
         * All codelists will be informed by iterative clinician review and exploratory data analysis
         * To avoid inclusion of acute conditions caused by SARS-CoV-2 as UHC, clinicians will review all the diagnoses present in the study codelists and exclude these. 
 
@@ -351,16 +353,52 @@ This process has resulted from consultation with a consultant paediatrician pane
     11. 	[Nygaard U, Holm M, Hartling UB, Glenthøj J, Schmidt LS, Nordly SB, et al. Incidence and clinical phenotype of multisystem inflammatory syndrome in children after infection with the SARS-CoV-2 delta variant by vaccination status: a Danish nationwide prospective cohort study. Lancet Child Adolesc Health. 2022;6: 459–465.](http://paperpile.com/b/npFJxx/RFwh)
 
 
-    12. 	[English indices of deprivation 2019. In: GOV.UK [Internet]. [cited 21 Apr 2022]. Available: https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019](http://paperpile.com/b/npFJxx/1zkFI)
+    12. 	[Bhattacharya A, Collin SM, Stimson J, Thelwall S, Nsonwu O, Gerver S, et al. Healthcare-associated COVID-19 in England: A national data linkage study. J Infect. 2021;83: 565–572.](http://paperpile.com/b/npFJxx/u4ZE)
 
 
-    13. 	[Dagan N, Barda N, Kepten E, Miron O, Perchik S, Katz MA, et al. BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting. N Engl J Med. 2021;384: 1412–1423.](http://paperpile.com/b/npFJxx/mOn11)
+    13. 	[ISARIC: Comparison of children and young people admitted with SARS-CoV-2 across the UK in the first and second pandemic waves – prospective multicentre observational cohort study, 9 September 2021. In: GOV.UK [Internet]. 17 Sep 2021 [cited 30 Sep 2022]. Available: https://www.gov.uk/government/publications/isaric-comparison-of-children-and-young-people-admitted-with-sars-cov-2-across-the-uk-in-the-first-and-second-pandemic-waves-prospective-multicentr](http://paperpile.com/b/npFJxx/iF37)
 
 
-    14. 	[Wijlaars LPMM, Gilbert R, Hardelid P. Chronic conditions in children and young people: learning from administrative data. Arch Dis Child. 2016;101: 881–885.](http://paperpile.com/b/npFJxx/S5b7)
+    14. 	[Ward JL, Harwood R, Smith C, Kenny S, Clark M, Davis PJ, et al. Risk factors for PICU admission and death among children and young people hospitalized with COVID-19 and PIMS-TS in England during the first pandemic year. Nat Med. 2022;28: 193–200.](http://paperpile.com/b/npFJxx/4D3N)
 
 
-    15. 	[Agency UHS. Coronavirus (COVID-19) vaccination information for public health professionals. The Green Book 2022.](http://paperpile.com/b/npFJxx/iOl3)
+    15. 	[Flood J, Shingleton J, Bennett E, Walker B, Amin-Chowdhury Z, Oligbu G, et al. Paediatric multisystem inflammatory syndrome temporally associated with SARS-CoV-2 (PIMS-TS): Prospective, national surveillance, United Kingdom and Ireland, 2020. Lancet Reg Health Eur. 2021;3: 100075.](http://paperpile.com/b/npFJxx/seVD)
 
 
-    16. 	[Home - TRUD. [cited 29 Sep 2022]. Available: https://isd.digital.nhs.uk/trud/user/guest/group/0/home](http://paperpile.com/b/npFJxx/SfC5)
+    16. 	[Davies P, Evans C, Kanthimathinathan HK, Lillie J, Brierley J, Waters G, et al. Intensive care admissions of children with paediatric inflammatory multisystem syndrome temporally associated with SARS-CoV-2 (PIMS-TS) in the UK: a multicentre observational study. Lancet Child Adolesc Health. 2020;4: 669–677.](http://paperpile.com/b/npFJxx/iVAE)
+
+
+    17. 	[Riphagen S, Gomez X, Gonzalez-Martinez C, Wilkinson N, Theocharis P. Hyperinflammatory shock in children during COVID-19 pandemic. The Lancet. 2020. pp. 1607–1608.](http://paperpile.com/b/npFJxx/no6k)
+
+
+    18. 	[Shekerdemian LS, Mahmood NR, Wolfe KK, Riggs BJ, Ross CE, McKiernan CA, et al. Characteristics and Outcomes of Children With Coronavirus Disease 2019 (COVID-19) Infection Admitted to US and Canadian Pediatric Intensive Care Units. JAMA Pediatr. 2020;174: 868–873.](http://paperpile.com/b/npFJxx/A1dN)
+
+
+    19. 	[Frost HM, Sebastian T, Keith A, Kurtz M, Dominguez SR, Parker SK, et al. COVID-19 and Acute Otitis Media in Children: A Case Series. J Prim Care Community Health. 2022;13: 21501319221082351.](http://paperpile.com/b/npFJxx/Wr2N)
+
+
+    20. 	[Sedighi I, Fahimzad A, Pak N, Khalili M, Shokrollahi MR, Heydari H, et al. A multicenter retrospective study of clinical features, laboratory characteristics, and outcomes of 166 hospitalized children with coronavirus disease 2019 (COVID-19): A preliminary report from Iranian Network for Research in Viral Diseases (INRVD). Pediatr Pulmonol. 2022;57: 498–507.](http://paperpile.com/b/npFJxx/zmp5)
+
+
+    21. 	[Marks KJ, Whitaker M, Agathis NT, Anglin O, Milucky J, Patel K, et al. Hospitalization of Infants and Children Aged 0-4 Years with Laboratory-Confirmed COVID-19 - COVID-NET, 14 States, March 2020-February 2022. MMWR Morb Mortal Wkly Rep. 2022;71: 429–436.](http://paperpile.com/b/npFJxx/JiKf)
+
+
+    22. 	[Rouva G, Vergadi E, Galanakis E. Acute abdomen in multisystem inflammatory syndrome in children: A systematic review. Acta Paediatr. 2022;111: 467–472.](http://paperpile.com/b/npFJxx/kISc)
+
+
+    23. 	[Kanthimathinathan HK, Buckley H, Davis PJ, Feltbower RG, Lamming C, Norman L, et al. In the eye of the storm: impact of COVID-19 pandemic on admission patterns to paediatric intensive care units in the UK and Eire. Crit Care. 2021;25: 399.](http://paperpile.com/b/npFJxx/SVmC)
+
+
+    24. 	[English indices of deprivation 2019. In: GOV.UK [Internet]. [cited 21 Apr 2022]. Available: https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019](http://paperpile.com/b/npFJxx/1zkFI)
+
+
+    25. 	[Dagan N, Barda N, Kepten E, Miron O, Perchik S, Katz MA, et al. BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting. N Engl J Med. 2021;384: 1412–1423.](http://paperpile.com/b/npFJxx/mOn11)
+
+
+    26. 	[Wijlaars LPMM, Gilbert R, Hardelid P. Chronic conditions in children and young people: learning from administrative data. Arch Dis Child. 2016;101: 881–885.](http://paperpile.com/b/npFJxx/S5b7)
+
+
+    27. 	[Agency UHS. Coronavirus (COVID-19) vaccination information for public health professionals. The Green Book 2022.](http://paperpile.com/b/npFJxx/iOl3)
+
+
+    28. 	[Home - TRUD. [cited 29 Sep 2022]. Available: https://isd.digital.nhs.uk/trud/user/guest/group/0/home](http://paperpile.com/b/npFJxx/SfC5)
