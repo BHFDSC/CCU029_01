@@ -48,7 +48,7 @@ Harrison Wilde, Chris Tomlinson, Bilal Mateen, Christina Pagel, Katherine Brown
    </td>
   </tr>
   <tr>
-   <td>0.1
+   <td>1.0
    </td>
    <td>08/02/2022
    </td>
