@@ -2,7 +2,6 @@
 
 This folder contains a series of `.csv` files used for study definitions, lookups and reference data.
 
-
 * [admission_type_definitions.csv](admission_type_definitions.csv)
     * Single `.csv` containing definitions of COVID-19 Hospital Admission Types
     * For reproduction outside the TRE see the [`/phenotypes/` folder](..\phenotypes\README.md)
