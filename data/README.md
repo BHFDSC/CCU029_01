@@ -10,7 +10,7 @@ This folder contains a series of `.csv` files used for study definitions, lookup
 * [dict_ethnic.csv](dict_ethnic.csv)
     * Lookup for ethnicity fields in both [HES APC](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics/hospital-episode-statistics-data-dictionary) and GDPPR
 * [ONS_prevalence.csv](ONS_prevalence.csv)
-    * ONS Community Infection Survey data used in Figure 1
+    * ONS Community Infection Survey data used in the top panel of Figure 1
 * [uk90.csv](uk90.csv)
-    * Reference ranges for age, height & weight for UK children
+    * Reference ranges for age, BMI, height & weight for UK children
     * Used for calculation of z-scores and defining obesity
