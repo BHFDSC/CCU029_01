@@ -81,6 +81,11 @@ if verbose:
 
 # COMMAND ----------
 
+if test:
+  display(spark.sql("SELECT * FROM global_temp.ccu029_01_filtered_vax_dates"))
+
+# COMMAND ----------
+
 # MAGIC %sql
 # MAGIC CREATE OR REPLACE GLOBAL TEMP VIEW ccu029_01_cohort_w_vaccinations AS
 # MAGIC SELECT

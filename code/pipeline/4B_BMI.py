@@ -349,3 +349,8 @@ if test:
 
 # COMMAND ----------
 
+if test:
+  display(spark.sql("SELECT * FROM dars_nic_391419_j3w9t_collab.ccu029_01_wip_cohort_w_bmi"))
+
+# COMMAND ----------
+

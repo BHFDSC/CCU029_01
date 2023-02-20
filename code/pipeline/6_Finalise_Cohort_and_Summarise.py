@@ -135,6 +135,91 @@ print(f"`{output_table_name}` has {table.count()} rows and {len(table.columns)} 
 # COMMAND ----------
 
 if test:
+  display(spark.sql(f"""SELECT
+  TYPE_OF_ADMISSION,
+  INFECTION_SOURCE,
+  100 * SUM(CASE WHEN POSITIVE_COVID_TEST_INCLUSION == 1 THEN 1 ELSE 0 END) / COUNT(*) AS PERC_POSITIVE,
+  COUNT(*)
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}
+WHERE COVID_ADMISSION_IN_WINDOW == 1
+GROUP BY INFECTION_SOURCE, TYPE_OF_ADMISSION
+ORDER BY TYPE_OF_ADMISSION, INFECTION_SOURCE"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""SELECT
+  SUM(CASE WHEN COVID_ADMISSION_IN_WINDOW == 1 AND GREEN_BOOK_UHC == 1 THEN 1 ELSE 0 END) AS NUM_UHC,
+  SUM(CASE WHEN COVID_ADMISSION_IN_WINDOW == 1 AND GREEN_BOOK_UHC == 0 THEN 1 ELSE 0 END) AS NUM_NON_UHC,
+  SUM(CASE WHEN COVID_ADMISSION_IN_WINDOW == 1 THEN 1 ELSE 0 END) AS NUM_ADMISSIONS
+FROM dars_nic_391419_j3w9t_collab.{output_table_name} WHERE AGE BETWEEN 5 AND 11.99999"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""SELECT
+  ROUND(100 * SUM(CASE WHEN COVID_OR_PIMS_RELATED_DEATH + COVID_ADMISSION_IN_WINDOW + MD_UHC == 3 THEN 1 ELSE 0 END) / SUM(CASE WHEN COVID_OR_PIMS_RELATED_DEATH + COVID_ADMISSION_IN_WINDOW == 2 THEN 1 ELSE 0 END), 1) AS PERC_MD_UHC_IN_CVD_AND_PIMS_RELATED_DEATHS_ADMISSIONS,
+  ROUND(100 * SUM(CASE WHEN COVID_OR_PIMS_RELATED_DEATH + MD_UHC == 2 THEN 1 ELSE 0 END) / SUM(CASE WHEN COVID_OR_PIMS_RELATED_DEATH == 1 THEN 1 ELSE 0 END), 1) AS PERC_MD_UHC_IN_CVD_AND_PIMS_RELATED_DEATHS_TESTS_ONLY
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""
+SELECT
+  SUM(CASE WHEN COVID_ICU == 1 AND ADMIDATE BETWEEN '{datetime.strftime(datetime.strptime(study_end, '%Y-%m-%d') - timedelta(days=365), '%Y-%m-%d')}' AND '{study_end}' THEN 1 ELSE 0 END) AS N_ICU_IN_YEAR_FROM_STUDY_END,
+  SUM(CASE WHEN COVID_ICU == 1 AND TYPE_OF_ADMISSION == 'Incidental' AND ADMIDATE BETWEEN '{datetime.strftime(datetime.strptime(study_end, '%Y-%m-%d') - timedelta(days=365), '%Y-%m-%d')}' AND '{study_end}' THEN 1 ELSE 0 END) AS N_ICU_IN_YEAR_FROM_STUDY_END,
+  SUM(CASE WHEN COVID_ICU == 1 AND ADMIDATE BETWEEN '{datetime.strftime(datetime.strptime(infection_censoring_date, '%Y-%m-%d') - timedelta(days=365), '%Y-%m-%d')}' AND '{infection_censoring_date}' THEN 1 ELSE 0 END) AS N_ICU_IN_YEAR_FROM_INFECTION_CENSORING
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT SUM(CASE WHEN INFECTION_VARIANT_PERIOD == 'Omicron' AND AGE_CAT == '< 1' THEN 1 ELSE 0 END) AS N_INFANT_OMICRON_OUT_OF_TOTAL_ADMISSIONS, ROUND(100 * SUM(CASE WHEN INFECTION_VARIANT_PERIOD == 'Omicron' AND AGE_CAT == '< 1' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_INFANT_OMICRON_OUT_OF_TOTAL_ADMISSIONS FROM dars_nic_391419_j3w9t_collab.{output_table_name} WHERE COVID_ADMISSION_IN_WINDOW == 1"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT CASE WHEN COVID_ADMISSION_IN_WINDOW == 1 THEN 'COVID Admission' ELSE 'Positive Test Only' END AS GROUP, ROUND(100 * SUM(CASE WHEN WEIGHT IS NOT NULL THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_WEIGHT_PRESENT, ROUND(100 * SUM(CASE WHEN HEIGHT IS NOT NULL THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_HEIGHT_PRESENT, ROUND(100 * SUM(CASE WHEN BMI IS NOT NULL THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_BMI_PRESENT FROM dars_nic_391419_j3w9t_collab.{output_table_name} GROUP BY CASE WHEN COVID_ADMISSION_IN_WINDOW == 1 THEN 'COVID Admission' ELSE 'Positive Test Only' END"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT ROUND(100 * SUM(CASE WHEN POSITIVE_TEST_SPECIMEN_DATE BETWEEN DATE_ADD(ADMIDATE, -42) AND DATE_ADD(ADMIDATE, -1) THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_PIMS_WITH_TEST_42_TO_1, ROUND(100 * SUM(CASE WHEN POSITIVE_TEST_SPECIMEN_DATE BETWEEN DATE_ADD(ADMIDATE, -42) AND ADMIDATE THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_PIMS_WITH_TEST_42_TO_0 FROM dars_nic_391419_j3w9t_collab.{output_table_name} WHERE TYPE_OF_ADMISSION == 'PIMS'"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT SUM(CASE WHEN COVID_ICU == 1 OR TYPE_OF_ADMISSION == 'PIMS' THEN 1 ELSE 0 END) FROM dars_nic_391419_j3w9t_collab.{output_table_name}"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT TYPE_OF_ADMISSION, COUNT(*), SUM(POSITIVE_COVID_TEST_INCLUSION), (SUM(POSITIVE_COVID_TEST_INCLUSION) / COUNT(*)) * 100 FROM dars_nic_391419_j3w9t_collab.{output_table_name} GROUP BY TYPE_OF_ADMISSION"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""SELECT CASE WHEN TYPE_OF_ADMISSION RLIKE 'Type A' THEN 'Type A' WHEN TYPE_OF_ADMISSION RLIKE 'Type B' THEN 'Type B' ELSE TYPE_OF_ADMISSION END, 100 * SUM(CASE WHEN POSITIVE_COVID_TEST_INCLUSION == 1 THEN 1 ELSE 0 END) / COUNT(*) FROM dars_nic_391419_j3w9t_collab.{output_table_name} GROUP BY CASE WHEN TYPE_OF_ADMISSION RLIKE 'Type A' THEN 'Type A' WHEN TYPE_OF_ADMISSION RLIKE 'Type B' THEN 'Type B' ELSE TYPE_OF_ADMISSION END"""))
+
+# COMMAND ----------
+
+
+if test:
+  display(spark.sql(f"""
+SELECT
+  COVID_ADMISSION_IN_WINDOW,
+  COUNT(*),
+  SUM(CASE WHEN WEIGHT IS NOT NULL THEN 1 ELSE 0 END),
+  SUM(CASE WHEN HEIGHT IS NOT NULL THEN 1 ELSE 0 END),
+  SUM(CASE WHEN BMI IS NOT NULL THEN 1 ELSE 0 END),
+  SUM(CASE WHEN BMI IS NOT NULL AND WEIGHT IS NOT NULL AND HEIGHT IS NOT NULL THEN 1 ELSE 0 END)
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}
+GROUP BY COVID_ADMISSION_IN_WINDOW"""))
+
+# COMMAND ----------
+
+if test:
   uhc_names_1 = ',\n  '.join(list(dict.fromkeys([f"SUM(CASE WHEN UHC == '{x.replace('PRESENT_CODES_GREEN_BOOK_UHC_', '').replace('PRESENT_CODES_FIVE_YEARS_GREEN_BOOK_UHC_', '')}' THEN 1 ELSE 0 END) AS N_{x.replace('PRESENT_CODES_GREEN_BOOK_UHC_', '').replace('PRESENT_CODES_FIVE_YEARS_GREEN_BOOK_UHC_', '')}" for x in table.schema.names if "PRESENT_CODES_GREEN_BOOK" in x or "PRESENT_CODES_FIVE_YEARS_GREEN_BOOK" in x])))
   print(uhc_names_1)
   uhc_names_2 = '\n  UNION ALL\n  '.join([f"SELECT EXPLODE(ARRAY_DISTINCT(SPLIT({x}, ','))) AS ICD10_CODE, '{x.replace('PRESENT_CODES_GREEN_BOOK_UHC_', '').replace('PRESENT_CODES_FIVE_YEARS_GREEN_BOOK_UHC_', '')}' AS UHC\n  FROM dars_nic_391419_j3w9t_collab.{output_table_name}" for x in table.schema.names if "PRESENT_CODES_GREEN_BOOK" in x or "PRESENT_CODES_FIVE_YEARS_GREEN_BOOK" in x])
@@ -205,6 +290,26 @@ ORDER BY ICD10_CODE""")
 # COMMAND ----------
 
 if test:
+  display(spark.sql(f"""
+SELECT
+  SUM(CASE WHEN ADMIDATE >= '2021-10-01' AND UKHSA_LABEL RLIKE "^UKHSA Type" THEN 1 ELSE 0 END) AS UKHSA_PERIOD_1,
+  SUM(CASE WHEN ADMIDATE BETWEEN '2021-04-07' AND '2021-09-30' AND UKHSA_LABEL RLIKE "^UKHSA Type" THEN 1 ELSE 0 END) AS UKHSA_PERIOD_2,
+  SUM(CASE WHEN ADMIDATE BETWEEN '2020-10-12' AND '2021-04-06' AND UKHSA_LABEL RLIKE "^UKHSA Type" THEN 1 ELSE 0 END) AS UKHSA_PERIOD_3
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f'''
+SELECT
+  COUNT(*),
+  VACCINATION_STATUS_14_DAYS_PRIOR_TO_INFECTION
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}
+GROUP BY VACCINATION_STATUS_14_DAYS_PRIOR_TO_INFECTION'''))
+
+# COMMAND ----------
+
+if test:
   code_col_names = ", ".join([f"SPLIT({x}, ',')" for x in table.schema.names if "PRESENT_CODES_GREEN_BOOK" in x])
   print(code_col_names)
 
@@ -263,6 +368,78 @@ ORDER BY N_OCCURRENCES DESC""")
   print(f"`{table_name}` has {table.count()} rows and {len(table.columns)} columns.")
   
   display(table)
+
+# COMMAND ----------
+
+# Kate requesting monthly counts of PIMS
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f'''
+SELECT
+  substring(ADMIDATE, 1, 7) as year_month,
+  COUNT(*) as hospitalisations,
+  SUM(ICU),
+  SUM(ICU_CCACTIV),
+  SUM(CC_O2),
+  SUM(CC_nCPAP),
+  SUM(CC_NIV),
+  SUM(CC_IMV_ETT),
+  SUM(CC_IMV_trache),
+  SUM(CC_tracheal_tube),
+  SUM(CC_jet_oscillator),
+  SUM(CC_MCS)
+FROM 
+  dars_nic_391419_j3w9t_collab.{output_table_name}
+WHERE
+  TYPE_OF_ADMISSION = "PIMS" AND COVID_ICU == 1
+GROUP BY substring(ADMIDATE, 1, 7)
+ORDER BY substring(ADMIDATE, 1, 7)'''))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT COVID_DAY_CASE, COUNT(*) FROM dars_nic_391419_j3w9t_collab.{output_table_name} GROUP BY COVID_DAY_CASE"))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""
+SELECT COUNT(*)
+FROM dars_nic_391419_j3w9t_collab.{output_table_name} a
+INNER JOIN dars_nic_391419_j3w9t_collab.curr302_patient_skinny_record b
+ON a.PERSON_ID_DEID = b.NHS_NUMBER_DEID"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""
+SELECT
+  TYPE_OF_ADMISSION,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'U071' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_U071,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'U072' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_U072,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'U073' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_U073,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'U074' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_U074,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT NOT RLIKE 'U071|U072|U073|U074' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_NONE  
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}
+WHERE COVID_ADMISSION_IN_WINDOW == 1
+GROUP BY TYPE_OF_ADMISSION
+ORDER BY TYPE_OF_ADMISSION"""))
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"""
+SELECT
+  TYPE_OF_ADMISSION,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'U075' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_U075,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'M303' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_M303,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT RLIKE 'R65' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_R65,
+  ROUND(100 * SUM(CASE WHEN DIAG_4_CONCAT NOT RLIKE 'R65|M303|U075' THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERC_NONE  
+FROM dars_nic_391419_j3w9t_collab.{output_table_name}
+WHERE TYPE_OF_ADMISSION NOT RLIKE 'Other|Exclude' AND TYPE_OF_ADMISSION IS NOT NULL
+GROUP BY TYPE_OF_ADMISSION ORDER BY TYPE_OF_ADMISSION"""))
 
 # COMMAND ----------
 

@@ -105,7 +105,7 @@ if verbose:
 # Uses Critical Care Activity Codes (`CCACTCODEn`)
 # >A type of critical care activity provided to a patient during a critical care period. Up to 20 activity codes can be submitted on each daily neonatal/paediatric critical care record.  
   
-# The dictionary to decode these is created in [`~/CCU029/00/CCACTODE`](https://db.core.data.digital.nhs.uk/#notebook/5445633/command/5445666) and stored in `dars_nic_391419_j3w9t_collab.ccu029_lkp_ccactcode`
+# The dictionary to decode these is created in [`../auxiliary/CCACTODE`](https://db.core.data.digital.nhs.uk/#notebook/5445633/command/5445666) and stored in `dars_nic_391419_j3w9t_collab.ccu029_lkp_ccactcode`
 
 # Plan:
 # 1. Pivot all `CCACTCODEn` into `ID | CCACTIVDATE | CCACTCODE` + Join to a custom dictionary to decode CCACTCODE

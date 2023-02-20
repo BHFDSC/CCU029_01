@@ -7,6 +7,10 @@
 
 # COMMAND ----------
 
+# MAGIC %run ./format_regex
+
+# COMMAND ----------
+
 import io
 import pandas as pd
 from functools import reduce
@@ -14,27 +18,14 @@ from operator import add
 from pyspark.sql.functions import lit, col, when
 
 
-# Converts a standard comma separated list string into regex union, formatting requirements safely allow for incomplete code stems to be used, i.e. "C1" for all codes starting with those two characters
-def list_to_regex(input_string, sep=","):
-  return f"'{'|'.join(['^' + x for x in input_string.split(sep)] + [',' + x for x in input_string.split(sep)])}'"
-
-
 # Programmatically builds the required SQL snippets to identify a UHC via rules extracted from the include + exclude codes as well as its type and name
-def create_uhc_definition_statements(name, includes, includes_5_years, excludes, excludes_5_years, uhc_type, sep=","):
-  filter_list = []
-  filter_5_years_list = []
+def create_uhc_definition_statements(name, includes, includes_5_years, uhc_type, sep=","):
+  
   # Write code requirements using the definitions imported above
   if includes:
-    filter_list.append(f"ALT_CODE RLIKE {list_to_regex(includes, sep)}")
-  if excludes:
-    filter_list.append(f"ALT_CODE NOT RLIKE {list_to_regex(excludes, sep)}")
+    filter_string = f"ALT_CODE RLIKE {convert_list_to_regex_string(includes, sep)}"
   if includes_5_years:
-    filter_5_years_list.append(f"ALT_CODE RLIKE {list_to_regex(includes_5_years, sep)}")
-  if excludes_5_years:
-    filter_5_years_list.append(f"ALT_CODE NOT RLIKE {list_to_regex(excludes_5_years, sep)}")
-  filter_string = " AND ".join(filter_list)
-  filter_5_years_string = " AND ".join(filter_5_years_list)
-  
+    filter_5_years_string = f"ALT_CODE RLIKE {convert_list_to_regex_string(includes_5_years, sep)}"
   
   if name == "OBESITY":
     # Obesity is a special case for Green Book and MD UHCs where different conditions are required based on BMI and weight-for-age / bmi-for-age Z scores that change depending on the age of the person, as well as presence of obesity codes as usual
@@ -51,9 +42,9 @@ def create_uhc_definition_statements(name, includes, includes_5_years, excludes,
     # There can be one or both of the 5 year or standard APA filter strings present, when both are, either being satisifed is sufficient
     lookback_list = "APA_DIAG"
     case_option_list = []
-    if filter_string:
+    if includes:
       case_option_list.append(f"SIZE(ARRAY_INTERSECT(POSSIBLE_CODES_{uhc_type}_{name}, SPLIT(APA_DIAG, ','))) > 0")
-    if filter_5_years_string:
+    if includes_5_years:
       case_option_list.append(f"SIZE(ARRAY_INTERSECT(POSSIBLE_CODES_FIVE_YEARS_{uhc_type}_{name}, SPLIT(FIVE_YEARS_DIAG, ','))) > 0")
     case_option = " OR ".join(case_option_list)
 
@@ -61,10 +52,10 @@ def create_uhc_definition_statements(name, includes, includes_5_years, excludes,
   possible_codes_outputs = []
   # This list will first contain a snippet that uses the `case_option` string to identify the UHC amongst the possible codes identified in the statements stored in the list above, and also the snippet(s) that collect the actual codes represent in each record that are the reason for its presence amongst those identified with the UHC
   definitions_outputs = [f"\n  CASE WHEN {case_option} THEN 1 ELSE 0 END AS {uhc_type}_{name}"]
-  if filter_string:
+  if includes:
     definitions_outputs.append(f"\n  CONCAT_WS(',', ARRAY_INTERSECT(POSSIBLE_CODES_{uhc_type}_{name}, SPLIT({lookback_list}, ','))) AS PRESENT_CODES_{uhc_type}_{name}")
     possible_codes_outputs.append(f"\n    COLLECT_LIST(CASE WHEN {filter_string} THEN ALT_CODE ELSE NULL END) AS POSSIBLE_CODES_{uhc_type}_{name}")
-  if filter_5_years_string:
+  if includes_5_years:
     definitions_outputs.append(f"\n  CONCAT_WS(',', ARRAY_INTERSECT(POSSIBLE_CODES_FIVE_YEARS_{uhc_type}_{name}, SPLIT(FIVE_YEARS_DIAG, ','))) AS PRESENT_CODES_FIVE_YEARS_{uhc_type}_{name}")
     possible_codes_outputs.append(f"\n    COLLECT_LIST(CASE WHEN {filter_5_years_string} THEN ALT_CODE ELSE NULL END) AS POSSIBLE_CODES_FIVE_YEARS_{uhc_type}_{name}")
   
@@ -72,7 +63,7 @@ def create_uhc_definition_statements(name, includes, includes_5_years, excludes,
 
 
 def generate_full_query(df, input_table, uhc_type, sep=","):
-  query_frags = [create_uhc_definition_statements(*row, uhc_type, sep) for row in zip(df['name'], df['includes'], df['includes_5_years'], df['excludes'], df['excludes_5_years'])]
+  query_frags = [create_uhc_definition_statements(*row, uhc_type, sep) for row in zip(df['name'], df['includes'], df['includes_5_years'])]
   # The CROSS JOIN part of this adds the single row table created within the sub-select statement to each row of the cohort, in order to then use those possible codes to identify UHCs in the cohort
   query = f"""
 SELECT

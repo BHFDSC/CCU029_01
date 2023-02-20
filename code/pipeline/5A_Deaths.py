@@ -56,6 +56,7 @@ SELECT
 FROM
   global_temp.ccu029_deaths
 WHERE
+  -- Needed for QC
   to_date(REG_DATE_OF_DEATH,'yyyyMMdd') <= '{study_end}'"""))
 
 # COMMAND ----------
@@ -164,3 +165,8 @@ optimise_table(output_table_name, "PERSON_ID_DEID")
 
 table = spark.sql(f"SELECT * FROM dars_nic_391419_j3w9t_collab.{output_table_name}")
 print(f"`{output_table_name}` has {table.count()} rows and {len(table.columns)} columns.")
+
+# COMMAND ----------
+
+if test:
+  display(spark.sql(f"SELECT COUNT(*) FROM dars_nic_391419_j3w9t_collab.{output_table_name}"))

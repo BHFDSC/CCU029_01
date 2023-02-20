@@ -151,3 +151,8 @@ if test:
 
 # COMMAND ----------
 
+if test:
+  display(spark.sql(f"SELECT * FROM dars_nic_391419_j3w9t_collab.{output_table_name}"))
+
+# COMMAND ----------
+

@@ -433,6 +433,11 @@ if test:
 # COMMAND ----------
 
 if test:
+  display(spark.sql(f"SELECT APA_DIAG, APA_HES_APC_DIAG, APA_HES_OP_DIAG, APA_GDPPR_DIAG, APA_COUNT, APA_HES_APC_COUNT, APA_HES_OP_COUNT, APA_GDPPR_COUNT, APA_HES_APC_DATES, * FROM dars_nic_391419_j3w9t_collab.{output_table_name}"))
+
+# COMMAND ----------
+
+if test:
   print("Checking no rows were lost by adding lookback info...")
   n = spark.sql(f"SELECT COUNT(*) FROM global_temp.ccu029_01_cohort_for_lookback").first()[0]
   n_ad_look = spark.sql(f"SELECT COUNT(*) FROM dars_nic_391419_j3w9t_collab.{output_table_name}").first()[0]
