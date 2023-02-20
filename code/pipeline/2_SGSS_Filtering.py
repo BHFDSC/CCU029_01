@@ -151,3 +151,8 @@ if test:
 
 # COMMAND ----------
 
+if test:
+  display(spark.sql(f"SELECT * FROM .{output_table_name}"))
+
+# COMMAND ----------
+

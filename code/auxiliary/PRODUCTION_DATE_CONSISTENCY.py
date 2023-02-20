@@ -15,127 +15,109 @@ except:
 
 # COMMAND ----------
 
-sgss_production_date = spark.sql("SELECT MAX(ProductionDate) FROM .sgss__archive").first()[0]
+row = spark.sql("SELECT MAX(ProductionDate), MAX(archived_on) FROM .hes_apc_all_years_archive").first()
+extract_production_date = row[0]
+extract_archived_on = row[1]
 
 # COMMAND ----------
 
 try:
   production_date
-  print(f"Config specifies {production_date} as the production date, the latest is: {sgss_production_date}")
+  if production_date == extract_production_date:
+    print(f"Config specifies {production_date} as the production date, this is the latest (per the hes_apc_all_years_archive).")
+  else:
+    print(f"Config specifies {production_date} as the production date, NOTE the latest is: {extract_production_date}")
 except:
-  production_date = sgss_production_date
-  print(f"No production date specified, using the latest which is: {sgss_production_date}")
+  production_date = extract_production_date
+  archived_on = extract_archived_on
+  print(f"No production / archived-on date specified, using the latest which is: {extract_production_date}")
 
 # COMMAND ----------
 
-skinny_table = "ccu029_skinny_auto"
-gdppr_table = "ccu029_gdppr"
-sgss_table = "ccu029_sgss"
-deaths_table = "ccu029_deaths"
-hes_apc_table = "ccu029_hes_apc"
-hes_op_table = "ccu029_hes_op"
-hes_cc_table = "ccu029_hes_cc"
-hes_ae_table = "ccu029_hes_ae"
+tables = {
+  "gdppr_table" : "ccu029_gdppr",
+  "sgss_table" : "ccu029_sgss",
+  "deaths_table" : "ccu029_deaths",
+  "hes_apc_table" : "ccu029_hes_apc",
+  "hes_op_table" : "ccu029_hes_op",
+  "hes_cc_table" : "ccu029_hes_cc",
+  "hes_ae_table" : "ccu029_hes_ae"
+}
+
+archives = {
+  "gdppr_table" : "gdppr__archive",
+  "sgss_table" : "sgss__archive",
+  "deaths_table" : "deaths__archive",
+  "hes_apc_table" : "hes_apc_all_years_archive",
+  "hes_op_table" : "hes_op_all_years_archive",
+  "hes_cc_table" : "hes_cc_all_years_archive",
+  "hes_ae_table" : "hes_ae_all_years_archive"
+}
 
 
 def create_global_temp_tables(verb=False):
-  if production_date == sgss_production_date:
-    if verb:
-      print("Using latest production date...")
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {skinny_table} AS
-    SELECT * FROM .patient_skinny_record
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {gdppr_table} AS
-    SELECT * FROM .gdppr_
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {sgss_table} AS
-    SELECT * FROM .sgss_
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {deaths_table} AS
-    SELECT * FROM .deaths_
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_apc_table} AS
-    SELECT * FROM .hes_apc_all_years
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_op_table} AS
-    SELECT * FROM .hes_op_all_years
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_cc_table} AS
-    SELECT * FROM .hes_cc_all_years
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_ae_table} AS
-    SELECT * FROM .hes_ae_all_years
-    """)
-  else:
-    if verb:
-      print("Using old production date...")
-    # Get historical table from the archive on that ProductionDate
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {skinny_table} AS
-    SELECT * FROM .curr302_patient_skinny_record_archive
-    WHERE ProductionDate = '{production_date}'
-    """)
-    spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {gdppr_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['gdppr_table']} AS
     SELECT * FROM .gdppr__archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {sgss_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['sgss_table']} AS
     SELECT * FROM .sgss__archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {deaths_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['deaths_table']} AS
     SELECT * FROM .deaths__archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_apc_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['hes_apc_table']} AS
     SELECT * FROM .hes_apc_all_years_archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_op_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['hes_op_table']} AS
     SELECT * FROM .hes_op_all_years_archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_cc_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['hes_cc_table']} AS
     SELECT * FROM .hes_cc_all_years_archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     spark.sql(f"""
-    CREATE OR REPLACE GLOBAL TEMP VIEW {hes_ae_table} AS
+    CREATE OR REPLACE GLOBAL TEMP VIEW {tables['hes_ae_table']} AS
     SELECT * FROM .hes_ae_all_years_archive
-    WHERE ProductionDate = '{production_date}'
+    WHERE archived_on = '{archived_on}'
     """)
     
+    for table in tables.items():
+      count = spark.sql(f"SELECT * FROM global_temp.{table[1]}").count()
+      if not count:
+        table_max_archived_on = spark.sql(f"SELECT MAX(archived_on) FROM .{archives[table[0]]}").first()[0]
+        print(f"There is no archive in `{archives[table[0]]}` for the selected date (`{archived_on}`), falling back to the archive from `{table_max_archived_on}`")
+        spark.sql(f"""
+        CREATE OR REPLACE GLOBAL TEMP VIEW {table[1]} AS
+        SELECT * FROM .{archives[table[0]]}
+        WHERE archived_on = '{table_max_archived_on}'
+        """)
+
 create_global_temp_tables(verb=True)
+
+# COMMAND ----------
+
+spark.sql(f"""
+CREATE OR REPLACE GLOBAL TEMP VIEW ccu029_skinny AS
+SELECT * FROM .ccu029_manually_compiled_skinny
+""")
 
 if verbose:
   print(f"""
-  TABLES GENERATED:
-
-  {skinny_table}
-  {gdppr_table}
-  {sgss_table}
-  {deaths_table}
-  {hes_apc_table}
-  {hes_op_table}
-  {hes_cc_table}
-  {hes_ae_table}
-
+  TABLES GENERATED
+  {', '.join(tables.values())}
   """)
 
-
 # COMMAND ----------
+
 
