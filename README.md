@@ -8,7 +8,7 @@ On behalf of the CVD-COVID-UK/COVID-IMPACT consortium**
 We aim to describe the first occurrences of hospitalisations related to SARS-CoV-2 occurring amongst all first infections in the under-18 population in England. We use a hierarchical approach to categorise admissions according to their nature using input from a board of expert clinicians. These categories identify those admissions caused or contributed to by SARS-CoV-2 infection, versus admissions that were incidental to infection or nosocomial, splitting into interesting and significant sub-types where appropriate. Additionally, we explore the role and changing distributions of demographics, underlying health conditions and risk factors, and variant eras in these admissions.
 
 ## How to cite this work
-> Citation details to follow
+> Wilde H, Tomlinson C, Mateen B A, Selby D, Kanthimathinathan H K, Ramnarayan P et al. Hospital admissions linked to SARS-CoV-2 infection in children and adolescents: cohort study of 3.2 million first ascertained infections in England. *BMJ* 2023; 382:e073639 doi:[10.1136/bmj-2022-073639](https://doi.org/10.1136/bmj-2022-073639)
 
 ## Code
 
